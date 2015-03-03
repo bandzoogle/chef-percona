@@ -5,7 +5,7 @@
 
 ::Chef::Node.send(:include, Opscode::OpenSSL::Password)
 
-default["percona"]["version"] = "5.6"
+default["percona"]["version"] = "5.5"
 version = node["percona"]["version"]
 
 # Always restart percona on configuration changes
@@ -35,8 +35,8 @@ default["percona"]["main_config_file"]                          = value_for_plat
 default["percona"]["keyserver"]                                 = "keys.gnupg.net"
 default["percona"]["encrypted_data_bag"]                        = "passwords"
 default["percona"]["encrypted_data_bag_secret_file"]            = ""
-default["percona"]["skip_passwords"]                            = false
-default["percona"]["skip_configure"]                            = false
+default["percona"]["skip_passwords"]                            = true
+default["percona"]["skip_configure"]                            = true
 
 # Start percona server on boot
 default["percona"]["server"]["enable"]                          = true
